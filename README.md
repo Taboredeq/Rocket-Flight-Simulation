@@ -3,4 +3,4 @@ Rocket flight simulation in MATLAB/Simulink considering fuel consumption and ver
 
 Model view:
 
-![Model view](Simulation_model.png)
+![Model view](images/Simulation_model.png)
