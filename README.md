@@ -10,17 +10,139 @@ This project simulates the vertical flight of a rocket taking into account:
 - Parachute deployment at a specified altitude
 - Kinetic energy over time
 
-The simulation models realistic physical behavior using numerical methods.
-
-Model view:
-
-![Model view](images/Simulation_model.png)
-
-
+The simulation models realistic physical behavior using numerical methods in MATLAB Simulink.
 
 ---
 
 ## ⚙️ Physical Model
 
-The rocket motion is described by Newton’s second law:
+### Equation of motion
 
+$$
+m \frac{dv}{dt} = F_{\mathrm{thrust}} + F_{\mathrm{gravity}} + F_{\mathrm{drag}} + F_{\mathrm{buoyancy}} + F_{\mathrm{ground}}
+$$
+
+---
+### Gravity force
+
+$$
+F_{\mathrm{gravity}} = \frac{G M m}{\left(r_{\mathrm{earth}}\right)^2}
+$$
+
+---
+### Drag force
+
+$$
+F_{\mathrm{drag}} = \frac{1}{2} \rho(h)\ C_d \ A\ v^2
+$$
+
+---
+### Buoyancy force
+
+$$
+F_{\mathrm{buoyancy}} = \rho(h)\ V\ g(h)
+$$
+
+---
+### Air density model
+
+$$
+\rho(h) = \rho_0 \exp\left(-\frac{M_{\mathrm{mol}}\ gh}{RT}\right)
+$$
+
+---
+### Parachute deployment
+
+$$
+A =
+\begin{cases}
+A_{\mathrm{par}}, & \text{if } h < h_{\mathrm{par}} \text{ and } v < 0 \\
+A, & \text{otherwise}
+\end{cases}
+$$
+
+---
+### Ground contact force
+
+$$
+F_{\mathrm{ground}} = -k h - c v
+$$
+
+---
+### Acceleration
+
+$$
+a = \frac{F_{\mathrm{total}}}{m}
+$$
+
+---
+### Kinetic energy
+
+$$
+E_k = \frac{1}{2} m v^2
+$$
+
+---
+
+## 🪂 Parachute System
+
+The simulation includes parachute deployment:
+
+- Activated at a defined altitude
+- Significantly increases drag force
+- Reduces landing velocity
+
+---
+
+## Model view:
+<p align="center">
+  <img src="images/Model_image.png" width="1500"/>
+</p>
+
+---
+
+## 🧪 Simulation Parameters
+
+### Environment:
+
+| Parameter |    Value    |       Description      |
+|-----------|-------------|------------------------|
+| G         | 6.6743e-11  | Gravitational constant |
+| M         | 5.98e24 kg  | Earth mass             |
+| p0        | 1.225 kg/m³ | Air density at ground  |
+| Tair      | 288 K       | Air temperature        |
+
+### Rocket:
+
+| Parameter | Value | Description |
+|----------|------|-------------|
+| m        | 65 kg | Dry mass |
+| A        | 0.6 m² | Cross-sectional area |
+| Cd       | 1.1   | Drag coefficient |
+| Vol      | 2 m³  | Volume |
+
+### Parachute:
+
+| Parameter | Value | Description |
+|----------|------|-------------|
+| A_par    | 20 m² | Parachute area |
+| h_par    | 15 m  | Deployment altitude |
+
+### Ground:
+
+| Parameter | Value | Description |
+|----------|------|-------------|
+| k        | 1e8   | Stiffness |
+| c        | sqrt(k*m) | Damping coefficient |
+
+---
+
+## 📊 Results
+
+The simulation generates multiple plots:
+
+- Height vs Time  
+- Velocity vs Time
+- Acceleration vs Time
+- Kinetic Energy vs Time
+- Forces vs Time 
