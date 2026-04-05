@@ -94,9 +94,32 @@ The simulation includes parachute deployment:
 
 ---
 
-## Model view:
+# Model view:
+
+### General view
 <p align="center">
-  <img src="images/Model_image.png" width="1500"/>
+  <img src="images/Model_image.png" width="1000"/>
+</p>
+
+### Forces sum and integration view
+<p align="center">
+  <img src="images/Sum_and_integration.png" width="1000"/>
+</p>
+
+### Physics and engine model view
+<p align="center">
+  <img src="images/Physics.png" width="590"/>
+  <img src="images/Fuel_drag.png" width="410"/>
+</p>
+
+### Projected area (Parachute model)
+<p align="center">
+  <img src="images/Projected_area.png" width="1000"/>
+</p>
+
+### Scopes and simulation stop condition
+<p align="center">
+  <img src="images/Display_and_sim_control.png" width="1000"/>
 </p>
 
 ---
