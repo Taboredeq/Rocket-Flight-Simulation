@@ -167,5 +167,15 @@ The simulation generates multiple plots:
 - Height vs Time  
 - Velocity vs Time
 - Acceleration vs Time
+
+<p align="center">
+  <img src="images/simulation_response.png" width="1000"/>
+</p>
 - Kinetic Energy vs Time
-- Forces vs Time 
+
+<p align="center">
+  <img src="images/kinetic_energy.png" width="1000"/>
+</p>
+
+- Forces vs Time
+
