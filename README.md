@@ -144,6 +144,16 @@ The simulation includes parachute deployment:
 | Cd       | 1.1   | Drag coefficient |
 | Vol      | 2 m³  | Volume |
 
+### Fuel:
+
+| Parameter | Value | Description |
+|----------|------|-------------|
+| mFuel       | 1kg   | Fuel mass |
+| s        | 1kg/s |Fuel consumption slope|
+| Fuel[0]   | 1920K |Chamber Temperature|
+| Fuel[1]   | 1.27 |Gamma / Heat Capacity Ratio|
+| Fuel[2]   | 0.04608 kg/mol|Fuel molar Mass|
+
 ### Parachute:
 
 | Parameter | Value | Description |
@@ -161,21 +171,29 @@ The simulation includes parachute deployment:
 ---
 
 ## 📊 Results
-
+Every parameter has values in SI unit.
 The simulation generates multiple plots:
 
-- Height vs Time  
-- Velocity vs Time
-- Acceleration vs Time
+- Acceleration [m/s^2] vs Time [s]
+- Velocity [m/s] vs Time
+- Height [m] vs Time  
 
 <p align="center">
   <img src="images/simulation_response.png" width="1000"/>
 </p>
-- Kinetic Energy vs Time
+
+- Kinetic Energy [J] vs Time [s]
 
 <p align="center">
   <img src="images/kinetic_energy.png" width="1000"/>
 </p>
 
-- Forces vs Time
+- Forces [N] vs Time [s]
 
+<p align="center">
+  <img src="images/forces_graph.png" width="1000"/>
+</p>
+
+Maximum hight: 30.57m
+
+Time of parachute deployment: 6.02s
